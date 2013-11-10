@@ -100,7 +100,7 @@ require 'docker'
 # => true
 
 # Create an Image.
-Docker::Image.create('fromImage' => 'base')
+image = Docker::Image.create('fromImage' => 'base')
 # => Docker::Image { :id => ae7ffbcd1, :connection => Docker::Connection { :url => http://localhost, :options => {:port=>4243} } }
 
 # Insert a file into an Image from a url.
@@ -169,7 +169,7 @@ Much like the Images, this object also has a one-to-one mapping with the [Contai
 require 'docker'
 
 # Create a Container. 
-Docker::Container.create('Cmd' => ['ls'], 'Image' => 'base')
+container = Docker::Container.create('Cmd' => ['ls'], 'Image' => 'base')
 # => Docker::Container { :id => 492510dd38e4, :connection => Docker::Connection { :url => http://localhost, :options => {:port=>4243} } }
 
 # Get more information about the Container.
